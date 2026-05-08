@@ -1,6 +1,6 @@
 # 🚀 Complete Machine Learning Roadmap — Project Based Learning
 
-> Learn Machine Learning from Beginner to Advanced through REAL-TIME PROJECTS, industry workflows, and deployment.
+> [Learn Machine Learning from Beginner to Advanced through REAL-TIME PROJECTS, industry workflows, and deployment.](https://docs.google.com/document/d/1AKp9MKZ7gb16DrwsBAHMqws0LkOz21W-QRTLjtLfH4w/edit?tab=t.0)
 
 ---
 
