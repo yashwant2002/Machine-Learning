@@ -229,4 +229,453 @@ By completing this roadmap you will be able to:
 ✅ Apply for internships/jobs  
 ✅ Start freelancing in AI/ML  
 
-—
+---
+# Machine Learning Algorithms - When to Use Each Algorithm
+
+This README provides a quick guide to **when to use different Machine Learning algorithms**, their purpose, advantages, disadvantages, and real-world applications.
+
+---
+
+# 1. Linear Regression
+
+## Purpose
+Predict a **continuous numerical value**.
+
+## Use When
+- Target variable is continuous.
+- Relationship between input and output is approximately linear.
+
+## Examples
+- House Price Prediction
+- Salary Prediction
+- Sales Forecasting
+
+## Advantages
+- Simple and interpretable
+- Fast to train
+- Easy to implement
+
+## Disadvantages
+- Sensitive to outliers
+- Assumes linear relationship
+
+---
+
+# 2. Logistic Regression
+
+## Purpose
+Predict a **categorical output**.
+
+## Use When
+- Binary classification
+- Multi-class classification
+
+## Examples
+- Spam Detection
+- Disease Prediction
+- Titanic Survival Prediction
+
+## Advantages
+- Easy to understand
+- Fast training
+- Gives prediction probabilities
+
+## Disadvantages
+- Cannot capture complex non-linear relationships
+
+---
+
+# 3. K-Nearest Neighbors (KNN)
+
+## Purpose
+Predict using the nearest data points.
+
+## Use When
+- Dataset is small or medium
+- Similar observations have similar outputs
+
+## Examples
+- Recommendation Systems
+- Handwritten Digit Recognition
+- Customer Similarity
+
+## Advantages
+- No training phase
+- Simple algorithm
+
+## Disadvantages
+- Slow prediction
+- Suffers from Curse of Dimensionality
+
+---
+
+# 4. Decision Tree
+
+## Purpose
+Predict using If-Else rules.
+
+## Use When
+- Need interpretable model
+- Numerical and categorical features
+
+## Examples
+- Loan Approval
+- Employee Attrition
+- Medical Diagnosis
+
+## Advantages
+- Easy to visualize
+- No feature scaling required
+
+## Disadvantages
+- Easily overfits
+
+---
+
+# 5. Random Forest
+
+## Purpose
+Improve Decision Tree accuracy using multiple trees.
+
+## Use When
+- Need high accuracy
+- Complex datasets
+
+## Examples
+- Fraud Detection
+- Credit Risk
+- Customer Churn
+
+## Advantages
+- High accuracy
+- Reduces overfitting
+- Works well with missing values
+
+## Disadvantages
+- Slower than Decision Tree
+- Hard to interpret
+
+---
+
+# 6. Support Vector Machine (SVM)
+
+## Purpose
+Find the best boundary between classes.
+
+## Use When
+- Small or medium datasets
+- High-dimensional data
+
+## Examples
+- Face Recognition
+- Cancer Detection
+- Text Classification
+
+## Advantages
+- Effective in high-dimensional datasets
+- Good accuracy
+
+## Disadvantages
+- Slow for large datasets
+- Difficult to tune
+
+---
+
+# 7. Naive Bayes
+
+## Purpose
+Classification using probability.
+
+## Use When
+- Text classification
+- Independent features
+
+## Examples
+- Spam Detection
+- Sentiment Analysis
+- News Classification
+
+## Advantages
+- Very fast
+- Works well with text data
+
+## Disadvantages
+- Assumes feature independence
+
+---
+
+# 8. K-Means Clustering
+
+## Purpose
+Group similar observations.
+
+## Use When
+- No target variable
+- Need customer segmentation
+
+## Examples
+- Customer Segmentation
+- Product Clustering
+- Image Compression
+
+## Advantages
+- Fast
+- Easy implementation
+
+## Disadvantages
+- Need to choose K
+- Sensitive to outliers
+
+---
+
+# 9. PCA (Principal Component Analysis)
+
+## Purpose
+Reduce the number of features.
+
+## Use When
+- Many correlated features
+- Need faster training
+- Data visualization
+
+## Examples
+- Image Compression
+- Noise Reduction
+- Feature Extraction
+
+## Advantages
+- Faster model training
+- Removes multicollinearity
+
+## Disadvantages
+- Difficult to interpret principal components
+
+---
+
+# 10. Gradient Boosting
+
+## Purpose
+Improve prediction by correcting previous errors.
+
+## Use When
+- High prediction accuracy is required
+
+## Examples
+- Credit Scoring
+- Customer Churn
+- Fraud Detection
+
+## Advantages
+- High accuracy
+
+## Disadvantages
+- Slow training
+- Hyperparameter tuning required
+
+---
+
+# 11. XGBoost
+
+## Purpose
+Optimized Gradient Boosting.
+
+## Use When
+- Structured (tabular) data
+- Machine learning competitions
+
+## Examples
+- Kaggle Competitions
+- Loan Default Prediction
+- Sales Prediction
+
+## Advantages
+- Very high accuracy
+- Handles missing values
+
+## Disadvantages
+- More complex
+- Longer training time
+
+---
+
+# 12. LightGBM
+
+## Purpose
+Fast Gradient Boosting for large datasets.
+
+## Use When
+- Large datasets
+- Fast training required
+
+## Examples
+- Banking
+- Insurance
+- Customer Analytics
+
+## Advantages
+- Very fast
+- Memory efficient
+
+## Disadvantages
+- Can overfit on small datasets
+
+---
+
+# 13. CatBoost
+
+## Purpose
+Gradient Boosting designed for categorical features.
+
+## Use When
+- Dataset contains many categorical variables
+
+## Examples
+- Customer Churn
+- Marketing Analytics
+- Sales Prediction
+
+## Advantages
+- Handles categorical features automatically
+- Excellent accuracy
+
+## Disadvantages
+- Slower than LightGBM
+
+---
+
+# 14. Neural Networks
+
+## Purpose
+Learn complex patterns.
+
+## Use When
+- Large datasets
+- Complex relationships
+
+## Examples
+- Face Recognition
+- ChatGPT
+- Speech Recognition
+- Image Classification
+
+## Advantages
+- Very powerful
+- High accuracy
+
+## Disadvantages
+- Requires large data
+- Computationally expensive
+
+---
+
+# 15. CNN (Convolutional Neural Network)
+
+## Purpose
+Image Processing.
+
+## Use When
+- Images
+- Videos
+
+## Examples
+- Face Detection
+- Medical Imaging
+- Object Detection
+
+---
+
+# 16. RNN / LSTM
+
+## Purpose
+Sequence and Time-Series data.
+
+## Use When
+- Time-series forecasting
+- Text generation
+- Speech recognition
+
+## Examples
+- Stock Price Prediction
+- Weather Forecasting
+- Language Translation
+
+---
+
+# Algorithm Selection Cheat Sheet
+
+| Problem | Recommended Algorithms |
+|----------|------------------------|
+| Predict a Number | Linear Regression, Random Forest Regressor, XGBoost Regressor |
+| Predict Yes/No | Logistic Regression, Decision Tree, Random Forest, SVM |
+| Multi-Class Classification | Logistic Regression, Random Forest, XGBoost |
+| Recommendation | KNN |
+| Text Classification | Naive Bayes, Logistic Regression, SVM |
+| Image Classification | CNN |
+| Customer Segmentation | K-Means |
+| Feature Reduction | PCA |
+| High Accuracy on Tabular Data | XGBoost, LightGBM, CatBoost |
+| Time-Series Forecasting | LSTM, ARIMA |
+
+---
+
+# Decision Flow
+
+```text
+Start
+│
+├── Is there a Target Variable?
+│
+├── No
+│   ├── Need Clustering?
+│   │      → K-Means / DBSCAN
+│   │
+│   └── Need Feature Reduction?
+│          → PCA
+│
+└── Yes
+    │
+    ├── Target is Number?
+    │       │
+    │       ├── Linear Relationship
+    │       │       → Linear Regression
+    │       │
+    │       └── Complex Relationship
+    │               → Random Forest / XGBoost
+    │
+    └── Target is Category?
+            │
+            ├── Simple Model
+            │       → Logistic Regression
+            │
+            ├── Similarity Based
+            │       → KNN
+            │
+            ├── Rule Based
+            │       → Decision Tree
+            │
+            ├── High Accuracy
+            │       → Random Forest / XGBoost
+            │
+            ├── Text Data
+            │       → Naive Bayes
+            │
+            └── High-Dimensional Data
+                    → SVM
+```
+
+---
+
+# Interview Tip
+
+Choosing the right algorithm depends on:
+
+1. Problem Type (Regression, Classification, Clustering)
+2. Dataset Size
+3. Number of Features
+4. Data Quality
+5. Model Interpretability
+6. Training Time
+7. Prediction Accuracy
+8. Computational Resources
+9. Presence of Outliers
+10. Business Requirements
