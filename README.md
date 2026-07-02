@@ -662,7 +662,167 @@ Start
             └── High-Dimensional Data
                     → SVM
 ```
+# Machine Learning Algorithms Requirements Cheat Sheet
 
+This table helps you choose the right Machine Learning algorithm based on your problem, data type, and preprocessing requirements.
+
+| Algorithm | Target Type | Relationship | Feature Scaling | Handles Categorical Data | Handles Missing Values | Outlier Sensitive | Best Dataset Size | Main Requirement |
+|-----------|-------------|--------------|-----------------|---------------------------|------------------------|-------------------|------------------|------------------|
+| **Linear Regression** | Continuous | Linear | ✅ Recommended | ❌ Encode first | ❌ Impute first | ✅ Yes | Small-Medium | Linear relationship |
+| **Polynomial Regression** | Continuous | Non-linear (Curved) | ✅ Yes | ❌ Encode first | ❌ Impute first | ✅ Yes | Small-Medium | Curved relationship |
+| **Ridge Regression** | Continuous | Linear | ✅ Yes | ❌ Encode first | ❌ Impute first | ✅ Yes | Small-Medium | Multicollinearity, Overfitting |
+| **Lasso Regression** | Continuous | Linear | ✅ Yes | ❌ Encode first | ❌ Impute first | ✅ Yes | Small-Medium | Feature Selection |
+| **Elastic Net** | Continuous | Linear | ✅ Yes | ❌ Encode first | ❌ Impute first | ✅ Yes | Small-Medium | Ridge + Lasso benefits |
+| **Logistic Regression** | Categorical | Linear Decision Boundary | ✅ Yes | ❌ Encode first | ❌ Impute first | ✅ Yes | Small-Medium | Classification |
+| **K-Nearest Neighbors (KNN)** | Both | Any | ✅ Required | ❌ Encode first | ❌ Impute first | ✅ Yes | Small | Similar observations |
+| **Naive Bayes** | Categorical | Probability Based | ❌ No | ❌ Encode first | ❌ Impute first | ❌ No | Small-Large | Independent features |
+| **Decision Tree** | Both | Any | ❌ No | ✅ Yes (after encoding) | ❌ Impute first | ❌ Less Sensitive | Any | Rule-based learning |
+| **Random Forest** | Both | Any | ❌ No | ✅ Yes | ❌ Impute first | ❌ Less Sensitive | Medium-Large | Reduce overfitting |
+| **Extra Trees** | Both | Any | ❌ No | ✅ Yes | ❌ Impute first | ❌ Less Sensitive | Medium-Large | Faster Random Forest |
+| **Support Vector Machine (SVM)** | Both | Linear / Non-linear | ✅ Required | ❌ Encode first | ❌ Impute first | ✅ Yes | Small-Medium | Maximum Margin |
+| **K-Means Clustering** | No Target | Clustering | ✅ Required | ❌ Encode first | ❌ Impute first | ✅ Yes | Medium | Need number of clusters (K) |
+| **Hierarchical Clustering** | No Target | Clustering | ✅ Yes | ❌ Encode first | ❌ Impute first | ✅ Yes | Small | Dendrogram |
+| **DBSCAN** | No Target | Clustering | ✅ Yes | ❌ Encode first | ❌ Impute first | ❌ Robust | Medium | Density-based clustering |
+| **PCA** | No Target | Dimensionality Reduction | ✅ Required | ❌ Numerical only | ❌ Impute first | ✅ Yes | Large Features | Correlated features |
+| **LDA** | Categorical | Dimensionality Reduction | ✅ Yes | ❌ Encode first | ❌ Impute first | ✅ Yes | Medium | Labeled data |
+| **XGBoost** | Both | Any | ❌ No | ❌ Encode first | ✅ Can handle missing values | ❌ Robust | Medium-Large | High prediction accuracy |
+| **LightGBM** | Both | Any | ❌ No | ✅ Handles categorical features | ✅ Yes | ❌ Robust | Large | Fast training |
+| **CatBoost** | Both | Any | ❌ No | ✅ Excellent for categorical features | ✅ Yes | ❌ Robust | Medium-Large | Many categorical features |
+| **Neural Network (ANN)** | Both | Complex | ✅ Required | ❌ Encode first | ❌ Impute first | ✅ Yes | Large | Large dataset |
+| **Convolutional Neural Network (CNN)** | Images | Complex | ✅ Normalize | ❌ N/A | ❌ Impute first | ❌ Robust | Large | Image data |
+| **RNN / LSTM** | Sequence | Complex | ✅ Normalize | ❌ Encode first | ❌ Impute first | ❌ Robust | Large | Sequential or Time-Series data |
+
+---
+
+# Quick Decision Guide
+
+## Regression (Target is a Number)
+
+| Situation | Best Algorithm |
+|-----------|----------------|
+| Linear Relationship | Linear Regression |
+| Curved Relationship | Polynomial Regression |
+| Overfitting | Ridge, Lasso, Elastic Net |
+| High Accuracy | Random Forest Regressor, XGBoost Regressor |
+| Small Dataset | Linear Regression |
+| Large Dataset | XGBoost, LightGBM |
+
+---
+
+## Classification (Target is a Category)
+
+| Situation | Best Algorithm |
+|-----------|----------------|
+| Simple & Interpretable | Logistic Regression |
+| Similarity-Based | KNN |
+| Rule-Based | Decision Tree |
+| High Accuracy | Random Forest, XGBoost |
+| Text Classification | Naive Bayes |
+| High-Dimensional Data | SVM |
+
+---
+
+## Unsupervised Learning (No Target)
+
+| Situation | Best Algorithm |
+|-----------|----------------|
+| Group Similar Data | K-Means |
+| Density-Based Clustering | DBSCAN |
+| Hierarchical Grouping | Hierarchical Clustering |
+| Reduce Features | PCA |
+| Supervised Feature Reduction | LDA |
+
+---
+
+# Machine Learning Algorithm Selection Flow
+
+```text
+Start
+│
+├── Is there a Target Variable?
+│
+├── No
+│   │
+│   ├── Want to Group Similar Data?
+│   │        ↓
+│   │      K-Means / DBSCAN / Hierarchical Clustering
+│   │
+│   └── Want to Reduce Features?
+│            ↓
+│          PCA / LDA
+│
+└── Yes
+    │
+    ├── Target is a Number?
+    │      │
+    │      ├── Linear Relationship
+    │      │       ↓
+    │      │   Linear Regression
+    │      │
+    │      ├── Curved Relationship
+    │      │       ↓
+    │      │   Polynomial Regression
+    │      │
+    │      ├── Overfitting
+    │      │       ↓
+    │      │   Ridge / Lasso / Elastic Net
+    │      │
+    │      └── High Accuracy
+    │              ↓
+    │        Random Forest / XGBoost
+    │
+    └── Target is a Category?
+           │
+           ├── Simple Model
+           │       ↓
+           │   Logistic Regression
+           │
+           ├── Similarity-Based
+           │       ↓
+           │   KNN
+           │
+           ├── Rule-Based
+           │       ↓
+           │   Decision Tree
+           │
+           ├── High Accuracy
+           │       ↓
+           │   Random Forest / XGBoost
+           │
+           ├── Text Data
+           │       ↓
+           │   Naive Bayes
+           │
+           └── High-Dimensional Data
+                   ↓
+                  SVM
+```
+
+---
+
+# Interview Checklist Before Choosing an Algorithm
+
+- ✅ Is the target variable **Numerical** or **Categorical**?
+- ✅ Is the relationship **Linear** or **Non-linear**?
+- ✅ Are there **Missing Values**?
+- ✅ Are there **Categorical Features**?
+- ✅ Is **Feature Scaling** required?
+- ✅ Are there **Outliers**?
+- ✅ Is the dataset **Small** or **Large**?
+- ✅ Do I need **Interpretability** or **High Accuracy**?
+- ✅ Is the data **Balanced** or **Imbalanced**?
+- ✅ Is the problem **Regression**, **Classification**, **Clustering**, or **Dimensionality Reduction**?
+
+---
+
+# Golden Rule
+
+> **Choose the algorithm based on the problem, not because it is popular.**
+
+- Predict a **Number** → Regression Algorithms
+- Predict a **Category** → Classification Algorithms
+- Group **Similar Data** → Clustering Algorithms
+- Reduce **Number of Features** → Dimensionality Reduction Algorithms
 ---
 
 # Interview Tip
